@@ -21,9 +21,9 @@
 var dadosPacientes = document.getElementsByClassName("paciente");
 
 
-
-for(var i = 0; i <= dadosPacientes.length -1; i++){
-	var pacienteAtual = dadosPacientes[i];
+//como funcao anonima
+percorreArrayPacientes(dadosPacientes, function(pacienteAtual){
+	
 
 	//declarado como variável para fazer atribuição posterior
 	var imc = pacienteAtual.getElementsByClassName("info-imc")[0]
@@ -43,5 +43,5 @@ for(var i = 0; i <= dadosPacientes.length -1; i++){
 
 	imc.textContent = paciente.imcPaciente();
 	console.log(imc);
+});
 
-}
