@@ -16,7 +16,12 @@
 // }
 
 
-function calculaImcPacientes(){
+
+
+//lê o Id botão do index
+var botao = document.getElementById("calcula-imcs");
+//Ouve o botão --- usar quando tiver mais de uma ação para ser executada ao mesmo tempo
+botao.addEventListener("click", function calculaImcPacientes(){
 	var dadosPacientes = document.getElementsByClassName("paciente");
 
 
@@ -32,12 +37,4 @@ function calculaImcPacientes(){
 		imc.textContent = paciente.imcPaciente();
 		console.log(imc);
 	});
-}
-
-//lê o Id botão do index
-var botao = document.getElementById("calcula-imcs");
-//Ouve o botão --- usar quando tiver mais de uma ação para ser executada ao mesmo tempo
-botao.addEventListener("click", calculaImcPacientes);
-botao.addEventListener("click", function(){
-	console.log("Realizando cálculo de IMC");
 });
