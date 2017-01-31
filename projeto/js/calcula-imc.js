@@ -5,6 +5,19 @@
 // }
 
 //pega os dados com base na classe utilizada
+
+
+function calculaImc(paciente){
+	if(paciente.altura > 0){
+		return paciente.peso / (paciente.altura * paciente.altura); 
+	}else{
+		console.log("Altura inválida");
+	}
+
+}
+
+
+
 var dadosPacientes = document.getElementsByClassName("paciente");
 
 
@@ -21,17 +34,7 @@ for(var i = 0; i <= dadosPacientes.length -1; i++){
 		altura : pacienteAtual.getElementsByClassName("info-altura")[0].textContent,
 	}
 
-	if(paciente.altura != 0){
-		var calculoImc = paciente.peso / (paciente.altura * paciente.altura); 
-		imcPaciente.textContent = calculoImc;
-		console.log(calculoImc);
-	}else{
-		console.log("Altura inválida");
-	}
+	imcPaciente.textContent = calculaImc(paciente);
+	console.log(calculaImc(paciente));
 
 }
-
-// 
-// 	var tdImc = document.getElementById("imc-2");
-// 	tdImc.textContent = imc;
-// 	console.log(imc);
