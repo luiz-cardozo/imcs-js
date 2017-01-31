@@ -35,6 +35,6 @@ botao.addEventListener("click", function calculaImcPacientes(){
 		var paciente = leituraPaciente(pacienteAtual);
 
 		imc.textContent = paciente.imcPaciente();
-		console.log(imc);
+		//console.log(imc);
 	});
 });
