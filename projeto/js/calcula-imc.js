@@ -7,14 +7,14 @@
 //pega os dados com base na classe utilizada
 
 
-function calculaImc(paciente){
-	if(paciente.altura > 0){
-		return paciente.peso / (paciente.altura * paciente.altura); 
-	}else{
-		console.log("Altura inválida");
-	}
+// function calculaImc(paciente){
+// 	if(paciente.altura > 0){
+// 		return paciente.peso / (paciente.altura * paciente.altura); 
+// 	}else{
+// 		console.log("Altura inválida");
+// 	}
 
-}
+// }
 
 
 
@@ -26,15 +26,22 @@ for(var i = 0; i <= dadosPacientes.length -1; i++){
 	var pacienteAtual = dadosPacientes[i];
 
 	//declarado como variável para fazer atribuição posterior
-	var imcPaciente = pacienteAtual.getElementsByClassName("info-imc")[0]
+	var imc = pacienteAtual.getElementsByClassName("info-imc")[0]
 
 	var paciente = {
 		nome : pacienteAtual.getElementsByClassName("info-nome")[0].textContent,
 		peso : pacienteAtual.getElementsByClassName("info-peso")[0].textContent,
 		altura : pacienteAtual.getElementsByClassName("info-altura")[0].textContent,
+		imcPaciente : function(){
+			if(paciente.altura > 0){
+				return this.peso / (this.altura * this.altura); 
+			}else{
+			console.log("Altura inválida");
+			}
+		}
 	}
 
-	imcPaciente.textContent = calculaImc(paciente);
-	console.log(calculaImc(paciente));
+	imc.textContent = paciente.imcPaciente();
+	console.log(imc);
 
 }
